@@ -5,7 +5,7 @@ module.exports = {
 
     entry: './src/index.js',
     mode: 'development',
-
+    devtool: 'inline-source-map',
     plugins: [
         new HtmlWebpackPlugin({
             title: "Output Management",
@@ -21,6 +21,10 @@ module.exports = {
           {
             test: /\.css$/i,
             use: ['style-loader', 'css-loader'],
+          },
+          {
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
           },
         ],
       },
